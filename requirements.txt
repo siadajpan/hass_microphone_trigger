@@ -1,0 +1,1 @@
+-e git://github.com/siadajpan/mqtt_utils.git#egg=mqtt_utils
