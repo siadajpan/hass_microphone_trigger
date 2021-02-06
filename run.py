@@ -10,11 +10,12 @@ from hass_microphone_trigger.settings import settings
 
 if __name__ == '__main__':
     now = datetime.now()
-    dt_string = now.strftime("%Y_%m_%d__%H_%M_%S")
-    if not os.path.exists('/home/karol/Projects/hass_microphone_trigger/logs'):
-        os.mkdir('/home/karol/Projects/hass_microphone_trigger/logs')
+    datetime_str = now.strftime("%Y_%m_%d__%H_%M_%S")
+    logs_path ='/home/karol/Projects/hass_microphone_trigger/logs'
+    if not os.path.exists(logs_path):
+        os.mkdir(logs_path)
 
-    logging.basicConfig(filename=f'/home/karol/Projects/hass_microphone_trigger/logs/{dt_string}.log',
+    logging.basicConfig(filename=f'{logs_path}/{datetime_str}.log',
                         filemode='a',
                         format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                         datefmt='%H:%M:%S',
